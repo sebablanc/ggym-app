@@ -1,0 +1,7 @@
+{
+  "name": "Ggym-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
