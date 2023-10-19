@@ -24,3 +24,43 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+.md body,
+.ios body {
+    --ion-background-color: var(--ion-color-dark);
+    --ion-text-color: var(--ion-color-light);
+}
+
+.sc-ion-alert-md .alert-radio-label.sc-ion-alert-md,
+[aria-checked=true].sc-ion-alert-md .alert-radio-label.sc-ion-alert-md {
+    color: var(--ion-color-light);
+}
+
+.error-message {
+    color: var(--ion-color-danger);
+    font-size: 12px;
+}
+
+.danger-btn {
+    color: var(--ion-color-danger) !important;
+}
+
+.ion-padding {
+    height: 100vh;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+#container {
+    min-height: calc(100vh - 56px);
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 70px);
+    margin: 0 auto;
+
+    .max-width { 
+        width: 100%;
+    }
+}

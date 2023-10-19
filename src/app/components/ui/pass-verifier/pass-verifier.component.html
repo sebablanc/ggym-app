@@ -1,0 +1,4 @@
+<p *ngFor="let verification of verifications" [appAlphabetTrafficLights]="value" [minLength]="verification.minLength" [type]="verification.type">
+  <ion-icon name="alert-circle-outline"></ion-icon>
+  {{ verification.label | translate }}
+</p>

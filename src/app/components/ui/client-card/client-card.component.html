@@ -1,0 +1,12 @@
+<ion-card *ngIf="clientData" color="light">
+  <ion-card-header>
+    <ion-card-title>{{ clientData.name + ' ' + clientData.lastName}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>{{ 'clientCard.emailLabel' | translate }}{{ clientData.email }}</p>
+    <p>{{ 'clientCard.phoneLabel' | translate }}{{ clientData.phone }}</p>
+  </ion-card-content>
+
+  <ion-button *ngFor="let button of buttons" [fill]="button.fillColor" [class]="button.extraClass" (click)="emitData(button.action)">{{ button.label | translate }}</ion-button>
+</ion-card>

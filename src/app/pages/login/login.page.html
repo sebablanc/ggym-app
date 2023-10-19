@@ -1,0 +1,7 @@
+<ion-content [fullscreen]="true">
+  <div class="grid-container">
+    <app-login-form [errorMessage]="error" (data)="login($event)"></app-login-form>
+    <app-common-button class="max-width" [label]="'commons.buttons.signin'" [type]="registerButtonType" (clicked)="goTo(registerRoute)"></app-common-button>
+    <app-common-button class="max-width" [label]="'commons.buttons.forgotPassword'" [type]="forgotPassButtonType" (clicked)="goTo(forgotPasswordRoute)"></app-common-button>
+  </div>
+</ion-content>

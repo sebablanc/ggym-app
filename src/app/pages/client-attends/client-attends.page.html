@@ -1,0 +1,11 @@
+<app-layout-with-menu [title]="''" [headerType]="headerType" (back)="goBack()">
+    <h1 *ngIf="cliente">{{ cliente.name }} {{ cliente.lastName }}</h1>
+    <p *ngIf="cliente">{{ clientPlan }}</p>
+    <app-attends-calendar [monthNumber]="currentMonthNumber" [yearNumber]="currentYearNumber"
+        [attendsDictionary]="attendsDictionary" (data)="dayClickedHandler($event)"></app-attends-calendar>
+    <h6>{{ daysWithAttends | quantityAttendsLabel }}</h6>
+
+    <app-options-picker [columns]="options" (data)="pickerHandler($event)"></app-options-picker>
+    <app-attends-accordion *ngIf="attendsOfTheDay.length > 0" [list]="attendsOfTheDay"
+        (delete)="confirmAttendanceDeletion($event)"></app-attends-accordion>
+</app-layout-with-menu>

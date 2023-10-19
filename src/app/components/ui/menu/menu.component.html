@@ -1,0 +1,17 @@
+<ion-menu menuId="menu" contentId="main-content" (ionWillOpen)="verifyRole()">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{ 'menu.title' | translate}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div *ngFor="let item of menuItems">
+      <ion-item *ngIf="!item.needAdmin || (item.needAdmin && isAdmin)">
+        <ion-label (click)="navigate(item.clickParam)">
+          <ion-icon [name]="item.icon"></ion-icon>
+          {{ item.label | translate}}
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-menu>

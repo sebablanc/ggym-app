@@ -1,0 +1,30 @@
+<form class="form-container" [formGroup]="loginForm">
+  
+  <ion-input
+    [label]="'commons.inputs.email.label' | translate"
+    label-placement="floating"
+    fill="outline"
+    [clearInput]="true"
+    type="email"
+    [placeholder]="'commons.inputs.email.placeholder' | translate"
+    formControlName="user"></ion-input>
+  
+  <ion-input
+    [label]="'commons.inputs.password.label' | translate"
+    label-placement="floating"
+    fill="outline"
+    [placeholder]="'commons.inputs.password.placeholder' | translate"
+    type="password"
+    formControlName="pass">
+  </ion-input>
+
+  <app-pass-verifier *ngIf="showVerifier" [value]="loginForm.value.pass || ''"></app-pass-verifier>
+  
+  <p *ngIf="error && error.length > 0" class="error-message">{{error}}</p>
+  
+  <ion-button
+    shape="round"
+    expand="block"
+    [disabled]="!loginForm.valid"
+    (click)="loginHandler()">{{ lblBtn | translate }}</ion-button>
+</form>

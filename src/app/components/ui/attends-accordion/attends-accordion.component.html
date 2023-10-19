@@ -1,0 +1,14 @@
+<ion-accordion-group>
+  <ion-accordion value="first">
+      <ion-item slot="header" color="dark">
+          <ion-label>{{ 'attendsAccordion.attendsCountLabel' | translate:param}}</ion-label>
+      </ion-item>
+      <div slot="content">
+          <p>{{ list.length | quantityAttendsLabel:'days' }}</p>
+          <div *ngFor="let attend of list" class="attend-hour-container">
+              <div>{{ attend.attendDate | date:'HH:mm' }} hs</div>
+              <ion-icon name="close-circle-outline" (click)="deleteClicked.emit(attend.id)"></ion-icon>
+          </div>
+      </div>
+  </ion-accordion>
+</ion-accordion-group>

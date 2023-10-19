@@ -1,0 +1,17 @@
+<form class="form-container" [formGroup]="emailForm">
+  
+  <ion-input
+    [label]="'commons.inputs.email.label' | translate"
+    label-placement="floating"
+    fill="outline"
+    [clearInput]="true"
+    type="email"
+    [placeholder]="'commons.inputs.email.placeholder' | translate"
+    formControlName="user"></ion-input>
+  
+  <ion-button
+    shape="round"
+    expand="block"
+    [disabled]="!emailForm.valid"
+    (click)="recoverHandler()">{{ 'commons.buttons.passwordRecovery' | translate }}</ion-button>
+</form>

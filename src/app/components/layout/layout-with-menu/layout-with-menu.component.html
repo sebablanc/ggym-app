@@ -1,0 +1,9 @@
+<app-menu *ngIf="headerType == menuType"></app-menu>
+
+<app-header [title]="title" [type]="headerType" (back)="backClicked.emit($event)"></app-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <div id="container">
+    <ng-content></ng-content>
+  </div>
+</ion-content>

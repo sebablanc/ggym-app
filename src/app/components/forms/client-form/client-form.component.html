@@ -1,0 +1,63 @@
+<form id="form-container" [formGroup]="clientForm">
+  <div id="cam-container">
+    <app-cam-button (data)="processScanData($event)"></app-cam-button>
+  </div>
+  
+  <ion-input
+    [label]="'commons.inputs.name.label' | translate"
+    label-placement="floating"
+    fill="outline"
+    [placeholder]="'commons.inputs.name.placeholder' | translate"
+    [clearInput]="true"
+    [clearOnEdit]="true"
+    formControlName="name"></ion-input>
+
+  <ion-input
+    [label]="'commons.inputs.lastName.label' | translate"
+    label-placement="floating"
+    fill="outline"
+    [placeholder]="'commons.inputs.lastName.placeholder' | translate"
+    [clearInput]="true"
+    [clearOnEdit]="true"
+    formControlName="lastName"></ion-input>
+
+  <ion-input
+    [label]="'commons.inputs.dni.label' | translate"
+    label-placement="floating"
+    type="number"
+    fill="outline"
+    [clearInput]="true"
+    [placeholder]="'commons.inputs.dni.placeholder' | translate"
+    formControlName="document"></ion-input>
+  
+  <ion-input
+    [label]="'commons.inputs.clientEmail.label' | translate"
+    label-placement="floating"
+    fill="outline"
+    [clearInput]="true"
+    type="email"
+    [placeholder]="'commons.inputs.clientEmail.placeholder' | translate"
+    formControlName="email"></ion-input>
+
+  <ion-input
+    [label]="'commons.inputs.phone.label' | translate"
+    label-placement="floating"
+    fill="outline"
+    [clearInput]="true"
+    [placeholder]="'commons.inputs.phone.placeholder' | translate"
+    formControlName="phone"
+    [maskito]="phoneMask"
+    [maskitoElement]="maskPredicate"></ion-input>
+
+    <ion-select [label]="'commons.inputs.plan.label' | translate" fill="outline" label-placement="floating" interface="popover" formControlName="plan">
+      <ion-select-option *ngFor="let plan of planTypesKeys" [value]="plan">{{ ('planes.'+plan) | translate}}</ion-select-option>
+    </ion-select>
+  
+  <p *ngIf="error && error.length > 0" class="error-message">{{error}}</p>
+  
+  <ion-button
+    shape="round"
+    expand="block"
+    [disabled]="!clientForm.valid"
+    (click)="formHandler()">{{ 'commons.buttons.create' | translate }}</ion-button>
+</form>

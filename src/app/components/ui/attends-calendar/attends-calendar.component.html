@@ -1,0 +1,10 @@
+<ion-grid>
+  <ion-row style="margin-bottom: 10px;">
+      <ion-col size="12">
+          <h3 id="open-picker" style="text-align: center;">{{ month }}</h3>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col *ngFor="let day of daysOfMonth"  class="bold" size="2" (click)="attendsDictionary && attendsDictionary[day] && sendData.emit(attendsDictionary[day])" [ngClass]="{'green-color': (attendsDictionary && attendsDictionary[day].length > 0)}">{{ day }}</ion-col>
+  </ion-row>
+</ion-grid>

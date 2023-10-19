@@ -5,6 +5,9 @@
   "projects": {
     "app": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "es-AR"
+      },
       "schematics": {
         "@ionic/angular-toolkit:page": {
           "styleext": "scss",
@@ -82,7 +85,8 @@
               "browserTarget": "app:build:production"
             },
             "development": {
-              "browserTarget": "app:build:development"
+              "browserTarget": "app:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "ci": {
               "progress": false

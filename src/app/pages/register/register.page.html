@@ -1,0 +1,3 @@
+<app-layout-with-menu [title]="''" [headerType]="headerType" (back)="goBack()">
+  <app-login-form [errorMessage]="error" [labelButton]="'commons.buttons.signin'" [showVerifier]="true" (data)="register($event)"></app-login-form>
+</app-layout-with-menu>

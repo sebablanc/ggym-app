@@ -1,0 +1,13 @@
+ion-action-sheet.custom-action-sheet {
+    --background: var(--ion-color-primary);
+    --backdrop-opacity: 0.6;
+    --button-color: #fff;
+    --color: #000;
+    --ion-color-danger: var(--ion-color-secondary);
+}
+
+@media (max-width: 429px) {
+    ion-button {
+        display: block;
+    }
+}

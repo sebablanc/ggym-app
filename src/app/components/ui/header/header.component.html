@@ -1,0 +1,14 @@
+<ion-header id="main-content" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button *ngIf="type === types.BACK" (click)="backClicked.emit(true)" auto-hide="false">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+        {{ 'commons.buttons.back' | translate }}
+      </ion-button>
+      <ion-menu-button *ngIf="type === types.MENU" auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      {{title | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>

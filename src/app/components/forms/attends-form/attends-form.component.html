@@ -1,0 +1,20 @@
+<form id="form-container" [formGroup]="attendForm">
+
+  <ion-input
+    [label]="'commons.inputs.dni.label' | translate"
+    label-placement="floating"
+    type="number"
+    fill="outline"
+    [clearInput]="true"
+    [placeholder]="'commons.inputs.dni.placeholder' | translate"
+    formControlName="document"></ion-input>
+  
+  <p *ngIf="error && error.length > 0" class="error-message">{{error}}</p>
+  
+  <ion-button
+    shape="round"
+    expand="block"
+    [disabled]="!attendForm.valid"
+    (click)="formHandler()">{{ 'commons.buttons.assist' | translate }}</ion-button>
+</form>
+

@@ -1,0 +1,142 @@
+{
+    "commons": {
+        "attends": "Asistencias",
+        "newClient": "Nuevo cliente",
+        "editClient": "Editar cliente",
+        "success": "Éxito",
+        "error": "Error",
+        "delete": "Eliminar",
+        "edit": "Editar",
+        "dni": "DNI",
+        "plan": "Plan",
+        "inputs": {
+            "email": {
+                "label": "Correo electrónico",
+                "placeholder": "Ingresá tu correo"
+            },
+            "password": {
+                "label": "Contraseña",
+                "placeholder": "Ingresá tu contraseña"
+            },
+            "dni": {
+                "label": "DNI",
+                "placeholder": "Número de documento"
+            },
+            "name": {
+                "label": "Nombre",
+                "placeholder": "Ingresá el nombre del cliente"
+            },
+            "lastName": {
+                "label": "Apellido",
+                "placeholder": "Ingresá el apellido del cliente"
+            },
+            "clientEmail": {
+                "label": "Correo electrónico",
+                "placeholder": "Ingresá el correo del cliente"
+            },
+            "phone": {
+                "label": "Teléfono (sin 0 ni 15)",
+                "placeholder": "Ingresá el teléfono del cliente"
+            },
+            "plan": {
+                "label": "Plan (por semana)"
+            }
+        },
+        "buttons": {
+            "login": "Ingresá",
+            "signin": "Registrarme",
+            "forgotPassword": "Olvidé mi contraseña",
+            "back": "Volver",
+            "passwordRecovery": "Recuperar contraseña",
+            "assist": "Asistir",
+            "create": "Crear"
+        }
+    },
+    "planes": {
+        "UNA_X_SEMANA": "Una vez",
+        "DOS_X_SEMANA": "Dos veces",
+        "TRES_X_SEMANA": "Tres veces",
+        "CUATRO_X_SEMANA": "Cuatro veces",
+        "SEMANA_COMPLETA": "Toda la semana"
+    },
+    "clientCard": {
+        "emailLabel": "Email: ",
+        "phoneLabel": "Tel.: "
+    },
+    "menu": {
+        "title": "Menu",
+        "homeOption": "Home",
+        "clientsOption": "Clientes",
+        "usersOption": "Usuarios",
+        "logout": "Cerrar sesión"
+    },
+    "passVerifier": {
+        "atLeast": {
+            "8characters": "Debe tener al menos 8 caracteres",
+            "4letters": "Debe tener al menos 4 letras",
+            "2numbers": "Debe tener al menos 2 números",
+            "1SpecialCharacter": "Debe tener al menos 1 caracter especial"
+        }
+    },
+    "attendsAccordion": {
+        "attendsCountLabel": "Asistencias del día {{ day }}"
+    },
+    "pages": {
+        "register": {
+            "alerts": {
+                "okTitle": "¡Usuario registrado!",
+                "okMessage": "Ya podés ingresar a la app"
+            }
+        },
+        "passwordForgotten": {
+            "alerts": {
+                "okTitle": "¡Correo enviado!"
+            }
+        },
+        "newClient": {
+            "alerts": {
+                "okCancelAlert": {
+                    "title": "Guardar cliente",
+                    "message": "¿Desea guardar la información de este cliente?"
+                }
+            }
+        },
+        "newAttend": {
+            "alerts": {
+                "okCancelAlert": {
+                    "title": "Guardar asistencia",
+                    "message": "¿Desea guardar esta asistencia?"
+                }
+            }
+        },
+        "clients": {
+            "alerts": {
+                "confirmDelete": {
+                    "title": "¿Estás seguro?",
+                    "message": "¿Desea eliminar a {{name}} {{lastName}}?"
+                }
+            }
+        },
+        "clientsAttends": {
+            "alerts": {
+                "confirmDelete": {
+                    "title": "¿Estás seguro?",
+                    "message": "¿Deseas eliminar esta asistencia?"
+                }
+            }
+        }
+    },
+    "pipes": {
+        "quantityAttendsLabel": {
+            "withoutAttends": "Sin asistencias en el {{type}}",
+            "singleAttends": "Una asistencia en el {{ type }}",
+            "multipleAttends": "{{ value }} asistencias en el {{ type }}"
+        }
+    },
+    "alerts" : {
+        "weAreSorryTitle": "¡Lo sentimos!",
+        "expiredSession": "Tu sesión ha caducado. Volvé a ingresar.",
+        "idleServers": "En estos momentos nuestros servidores no están activos. Intentálo más tarde nuevamente",
+        "insufficientPermissions": "No tenés los permisos suficientes para ejecutar esta acción"
+    }
+}

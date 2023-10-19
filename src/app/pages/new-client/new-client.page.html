@@ -1,0 +1,3 @@
+<app-layout-with-menu [title]="clientFinded ? 'commons.editClient' : 'commons.newClient'" [headerType]="headerType" (back)="goBack()">
+  <app-client-form *ngIf="!searching" [client]="clientFinded" (data)="saveClient($event)"></app-client-form>
+</app-layout-with-menu>
