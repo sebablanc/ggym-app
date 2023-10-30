@@ -15,22 +15,11 @@ import { UserService } from './services/user/user.service';
 export class AppComponent implements OnInit {
 
   constructor(
-    private loginSrv: LoginService,
-    private translateSrv: TranslateService,
-    private navigationSrv: NavigationService,
-    private userSrv: UserService
+    private translateSrv: TranslateService
   ) {}
 
   ngOnInit(){
     this.translatePage('es');
-    
-    if(!this.loginSrv.isLoggedIn()) {
-      this.loginSrv.logout();
-      this.navigationSrv.goLogin();
-    } else {
-      this.userSrv.getUserRoles()
-      this.navigationSrv.goHome();
-    }
   }
 
 

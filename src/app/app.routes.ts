@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth/auth.guard';
 
 export const routes: Routes = [
   {
@@ -13,22 +14,27 @@ export const routes: Routes = [
   {
     path: 'home',
     loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage),
+    canActivate: [AuthGuard]
   },
   {
     path: 'new-client',
-    loadComponent: () => import('./pages/new-client/new-client.page').then( m => m.NewClientPage)
+    loadComponent: () => import('./pages/new-client/new-client.page').then( m => m.NewClientPage),
+    canActivate: [AuthGuard]
   },
   {
     path: 'new-client/:id',
-    loadComponent: () => import('./pages/new-client/new-client.page').then( m => m.NewClientPage)
+    loadComponent: () => import('./pages/new-client/new-client.page').then( m => m.NewClientPage),
+    canActivate: [AuthGuard]
   },
   {
     path: 'new-attends',
-    loadComponent: () => import('./pages/new-attends/new-attends.page').then( m => m.NewAttendsPage)
+    loadComponent: () => import('./pages/new-attends/new-attends.page').then( m => m.NewAttendsPage),
+    canActivate: [AuthGuard]
   },
   {
     path: 'clients',
-    loadComponent: () => import('./pages/clients/clients.page').then( m => m.ClientsPage)
+    loadComponent: () => import('./pages/clients/clients.page').then( m => m.ClientsPage),
+    canActivate: [AuthGuard]
   },
   {
     path: 'register',
@@ -40,10 +46,16 @@ export const routes: Routes = [
   },
   {
     path: 'client-attends',
-    loadComponent: () => import('./pages/client-attends/client-attends.page').then( m => m.ClientAttendsPage)
+    loadComponent: () => import('./pages/client-attends/client-attends.page').then( m => m.ClientAttendsPage),
+    canActivate: [AuthGuard]
   },
   {
     path: 'users',
-    loadComponent: () => import('./pages/users/users.page').then( m => m.UsersPage)
+    loadComponent: () => import('./pages/users/users.page').then( m => m.UsersPage),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'validate-register',
+    loadComponent: () => import('./pages/validate-register/validate-register.page').then( m => m.ValidateRegisterPage)
   },
 ];
