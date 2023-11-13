@@ -11,6 +11,7 @@ import { LoginResponseModel } from 'src/app/models/loginResponseModel';
 import { HEADER_TYPES } from 'src/app/components/ui/header/header.interfaces';
 import { AlertService } from 'src/app/services/alert/alert.service';
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
+import { SessionService } from 'src/app/services/session/session.service';
 
 @Component({
   selector: 'app-register',
@@ -27,7 +28,8 @@ export class RegisterPage implements OnInit {
     private navigationSrv: NavigationService,
     private loginSrv: LoginService,
     private alertSrv: AlertService,
-    private translateSrv: TranslateService
+    private translateSrv: TranslateService,
+    private sessionSrv: SessionService
   ) { }
 
   ngOnInit() {
@@ -47,6 +49,7 @@ export class RegisterPage implements OnInit {
         this.translateSrv.instant('pages.register.alerts.okTitle'),
         this.translateSrv.instant('pages.register.alerts.okMessage')
       );
+      this.sessionSrv.setSession(data.token, data.expirationIn);
     } else {
       this.error = data.message
     }

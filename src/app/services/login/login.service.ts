@@ -16,8 +16,6 @@ export class LoginService {
 
   private SIGN_UP_URL = '/auth/signup';
 
-  private RECOVER_PASS_URL = '/auth/recover';
-
   constructor(
     private http: HttpClient,
     private sessionSrv: SessionService,
@@ -30,10 +28,6 @@ export class LoginService {
 
   login(user: LoginModel) {
     return this.http.post<LoginResponseModel>(environment.baseUrl + this.SIGN_IN_URL, user);
-  }
-
-  recoverPass(user: string) {
-    return this.http.post<LoginResponseModel>(environment.baseUrl + this.RECOVER_PASS_URL, { email: user });
   }
 
   logout() {

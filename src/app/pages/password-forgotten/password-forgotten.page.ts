@@ -7,6 +7,9 @@ import { HEADER_TYPES } from 'src/app/components/ui/header/header.interfaces';
 import { CustomFormsModule } from 'src/app/components/forms/forms.module';
 import { AlertService } from 'src/app/services/alert/alert.service';
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { UserAccountService } from 'src/app/services/user-account/user-account.service';
+import { SessionService } from 'src/app/services/session/session.service';
 
 @Component({
   selector: 'app-password-forgotten',
@@ -20,8 +23,9 @@ export class PasswordForgottenPage implements OnInit {
 
   constructor(
     private navigationSrv: NavigationService,
-    private loginSrv: LoginService,
+    private userAaccountSrv: UserAccountService,
     private alertSrv: AlertService,
+    private sessionSrv: SessionService,
     private translateSrv: TranslateService
   ) { }
 
@@ -31,14 +35,15 @@ export class PasswordForgottenPage implements OnInit {
   goBack() { this.navigationSrv.goLogin() }
 
   recoverPass(email: string) {
-    this.loginSrv.recoverPass(email).subscribe(
+    this.userAaccountSrv.recoverPass(email).subscribe(
       (data) => this.continueWithRegister(data)
     );
   }
 
   private continueWithRegister(data: LoginResponseModel) {
     if (data.success) {
-      this.alertSrv.okAlert(this.translateSrv.instant('pages.register.alerts.okTitle'), data.message);
+      this.alertSrv.okAlert(this.translateSrv.instant('pages.passwordForgotten.alerts.okTitle'), data.message);
+      this.sessionSrv.setSession(data.token, data.expirationIn);
     }
   }
 

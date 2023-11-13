@@ -10,19 +10,22 @@ import { UiModule } from '../ui/ui.module';
 import { AttendsFormComponent } from './attends-form/attends-form.component';
 import { EmailFormComponent } from './email-form/email-form.component';
 import { DirectivesModule } from 'src/app/directives/directives.module';
+import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component';
 
 @NgModule({
   declarations: [
     LoginFormComponent,
     EmailFormComponent,
     ClientFormComponent,
-    AttendsFormComponent
+    AttendsFormComponent,
+    ChangePasswordFormComponent
   ],
   exports: [
     LoginFormComponent,
     EmailFormComponent,
     ClientFormComponent,
-    AttendsFormComponent
+    AttendsFormComponent,
+    ChangePasswordFormComponent
   ],
   imports: [
     CommonModule,

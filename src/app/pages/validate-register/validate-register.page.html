@@ -1,0 +1,7 @@
+<ion-content *ngIf="success != null" [fullscreen]="true">
+  <div id="container">
+    <h1>{{ (success ? 'pages.validateRegister.pageOkTitle' : 'pages.validateRegister.pageErrorTitle') | translate}}</h1>
+    <p>{{ (success ? 'pages.validateRegister.pageOkParagraph' : 'pages.validateRegister.pageErrorParagraph') | translate}}</p>
+    <app-common-button class="max-width" [label]="'pages.validateRegister.backLogin'" (clicked)="backToLogin()"></app-common-button>
+  </div>
+</ion-content>

@@ -16,7 +16,7 @@ export class LoginFormComponent  implements OnInit {
 
   loginForm = this.fb.nonNullable.group({
     user: ['', [Validators.required, Validators.email]],
-    pass: ['', [Validators.required, createPasswordStrengthValidator()]]
+    pass: ['', [Validators.required, createPasswordStrengthValidator(), Validators.minLength(8)]]
   });
 
   constructor(private fb: FormBuilder) { }

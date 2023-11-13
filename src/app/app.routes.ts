@@ -58,4 +58,8 @@ export const routes: Routes = [
     path: 'validate-register',
     loadComponent: () => import('./pages/validate-register/validate-register.page').then( m => m.ValidateRegisterPage)
   },
+  {
+    path: 'recover-password-via-email',
+    loadComponent: () => import('./pages/recover-password-via-email/recover-password-via-email.page').then( m => m.RecoverPasswordViaEmailPage)
+  },
 ];

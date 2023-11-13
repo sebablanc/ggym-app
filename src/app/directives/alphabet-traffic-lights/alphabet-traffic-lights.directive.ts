@@ -8,6 +8,7 @@ export class AlphabetTrafficLightsDirective {
   @Input() appAlphabetTrafficLights: string | undefined = '';
   @Input() minLength = 0;
   @Input() type = '';
+  @Input() verifierValue = '';
 
   constructor(private el: ElementRef) { }
 
@@ -18,6 +19,9 @@ export class AlphabetTrafficLightsDirective {
       const result = passwordStrengthValidation(this.appAlphabetTrafficLights);
       let isOK = false;
       switch (this.type) {
+        case 'same': 
+          isOK = this.appAlphabetTrafficLights === this.verifierValue;
+          break;
         case 'letters':
           isOK = (result?.hasAlphabetic) || false;
           break;

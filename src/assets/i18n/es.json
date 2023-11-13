@@ -40,6 +40,10 @@
             },
             "plan": {
                 "label": "Plan (por semana)"
+            },
+            "repeatPassword": {
+                "label": "Repetir contraseña",
+                "placeholder": "Ingresá nuevamente la contraseña"
             }
         },
         "buttons": {
@@ -49,7 +53,8 @@
             "back": "Volver",
             "passwordRecovery": "Recuperar contraseña",
             "assist": "Asistir",
-            "create": "Crear"
+            "create": "Crear",
+            "changePassword": "Cambiar contraseña"
         }
     },
     "planes": {
@@ -76,7 +81,8 @@
             "4letters": "Debe tener al menos 4 letras",
             "2numbers": "Debe tener al menos 2 números",
             "1SpecialCharacter": "Debe tener al menos 1 caracter especial"
-        }
+        },
+        "repeatPassword": "Las contraseñas deben coincidir"
     },
     "attendsAccordion": {
         "attendsCountLabel": "Asistencias del día {{ day }}"
@@ -85,8 +91,19 @@
         "register": {
             "alerts": {
                 "okTitle": "¡Usuario registrado!",
-                "okMessage": "Ya podés ingresar a la app"
+                "okMessage": "Acordate de revisar tu correo para validar la cuenta"
             }
+        },
+        "validateRegister": {
+            "alerts": {
+                "okTitle": "¡Cuenta validada!",
+                "okMessage": "Ya podés ingresar a la app"
+            },
+            "pageOkTitle":  "¡Tu cuenta ha sido validada!",
+            "pageErrorTitle":  "¡Error al intentar validar tu cuenta!",
+            "pageOkParagraph":  "Ya podés acceder a la App.",
+            "pageErrorParagraph":  "No pudimos validar tu cuenta. ¿Estás seguro de estar registrado?",
+            "backLogin": "Volver al login"
         },
         "passwordForgotten": {
             "alerts": {
